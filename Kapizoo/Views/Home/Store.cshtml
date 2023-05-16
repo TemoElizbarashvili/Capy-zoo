@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Capybara>
+
+<style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card {
+        flex: 0 0 calc(33.33% - 10px);
+        margin-bottom: 20px;
+        border: 1px solid #222;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .name-price-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .gender-age-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="row container pb-3 backgroundWhite">
+    <h2 class="pl-1 mt-2"><b>Available Capybaras</b></h2>
+    <div class="col-12">
+        <div class="card-container">
+            @foreach (var c in Model)
+            {
+                <div class="card bg-white rounded shadow-sm">
+                    <div class="card-body">
+                        <div class="name-price-container">
+                            <div class="h5">@c.Name</div>
+                            <div><span class="text-info h4">@c.Price.ToString("C")</span></div>
+                        </div>
+                        <img class="card-img-top img-fluid d-inline-block mx-auto mb-3 img" style="width: 100%; height: 15vw; object-fit: cover;" src="~/img/hero-capy.webp" alt="capy image" />
+                        <div class="gender-age-container">
+                            <div>
+                                @if (c.gender == 'F')
+                                {
+                                    <span class="badge p-2 border w-100 text-dark bg-warning">Female</span>
+                                }
+                                else
+                                {
+                                    <span class="badge p-2 border w-100 text-dark bg-warning">Male</span>
+                                }
+                            </div>
+                            <div>
+                                <span class="badge p-2 border w-100 text-dark bg-info">Age: @c.Age</span>
+                            </div>
+                        </div>
+                        <div style="font-size:13px; text-align:justify">
+                            <p>@c.Description</p>
+                        </div>
+                        <div class="col-12 p-1">
+                            <a asp-page="" class="btn btn-dark form-control btn-sm p-2" style="height:40px">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
