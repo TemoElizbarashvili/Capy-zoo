@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/sketchy.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Kapizoo.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-WCgK4Y...rZgKf6+" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -22,17 +23,29 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>                   
-                        <li class="nav-item">   
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Store">Store</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                        </li>
+                        <li>
+                        </li>
                     </ul>
-                    <div class="col-6 navbar-text text-end">
-                        <vc:cart-summary />
-                    </div>
+                </div>
+                <div class="navbar-text text-end ">
+                    @if (Model?.Lines.Count() > 0)
+                    {
+                        <small class="navbar-text">
+                            <b>Your cart:</b>
+                            @Model?.Lines.Sum(x => x.Quantity) item(s)
+                            @Model?.ComputeTotalValue().ToString("c")
+                        </small>
+                    }
+                    <a class="btn btn-sm btn-secondary navbar-btn" asp-area="" asp-page="/Store">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
                 </div>
             </div>
         </nav>

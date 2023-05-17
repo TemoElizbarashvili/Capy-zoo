@@ -49,7 +49,9 @@ namespace Kapizoo.Controllers
             {
                 cart.AddItem(capy, 1);
             }
-            return Ok();
+            List<Capybara> capybaras = ZooRepository.Capybaras.ToList();
+            ViewData["Capybaras"] = capybaras;
+            return View(cart);
         }
 
     }
