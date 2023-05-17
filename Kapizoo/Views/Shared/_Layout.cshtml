@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Kapizoo.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-WCgK4Y...rZgKf6+" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
     <header>
@@ -43,7 +44,7 @@
                             @Model?.ComputeTotalValue().ToString("c")
                         </small>
                     }
-                    <a class="btn btn-sm btn-secondary navbar-btn" asp-area="" asp-page="/Store">
+                    <a class="btn btn-sm btn-secondary navbar-btn" asp-area="" asp-controller="Cart" asp-action="Index">
                         <i class="fa fa-shopping-cart"></i>
                     </a>
                 </div>
@@ -64,6 +65,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/57c05df5db.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
