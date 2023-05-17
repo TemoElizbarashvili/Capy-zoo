@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Cart
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -29,6 +30,9 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Store">Store</a>
                         </li>
                     </ul>
+                    <div class="col-6 navbar-text text-end">
+                        <vc:cart-summary />
+                    </div>
                 </div>
             </div>
         </nav>
