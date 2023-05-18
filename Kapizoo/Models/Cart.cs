@@ -31,6 +31,19 @@ namespace Kapizoo.Models
             }
         }
 
+        public virtual void RemoveItem(Capybara capybara, int quantity)
+        {
+            CartLine line = Lines.Where(c => c.Capybara.CapybaraID == capybara.CapybaraID).FirstOrDefault();
+            if (line.Quantity == 1)
+            {
+                RemoveLine(capybara);
+            }
+            else
+            {
+                line.Quantity -= quantity;
+            }
+        }
+
         public virtual void RemoveLine(Capybara capybara) => Lines.RemoveAll(l => l.Capybara.CapybaraID == capybara.CapybaraID);
 
         public double ComputeTotalValue() => Lines.Sum(i => i.Capybara.Price * i.Quantity);
