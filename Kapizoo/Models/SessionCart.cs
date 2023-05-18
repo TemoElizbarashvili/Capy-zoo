@@ -21,6 +21,12 @@ namespace Kapizoo.Models
             Session.SetJson("Cart", this);
         }
 
+        public override void RemoveItem(Capybara capybara, int quantity)
+        {
+            base.RemoveItem(capybara, quantity);
+            Session.SetJson("Cart", this);
+        }
+
         public override void RemoveLine(Capybara capybara)
         {
             base.RemoveLine(capybara);

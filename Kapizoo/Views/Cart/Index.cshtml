@@ -60,13 +60,13 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-lg-6">
                                     <form method="post" action="@Url.Action("Plus", "Cart")">
-                                        <input type="hidden" name="capyJson" value="@System.Text.Json.JsonSerializer.Serialize(capy.Capybara)" />
+                                        <input type="hidden" name="capyId" value="@capy.Capybara.CapybaraID" />
                                         <button type="submit" class="btn btn-outline-success">
                                             <i class="fa-solid fa-square-plus"></i>
                                         </button>
                                     </form>
                                     <form method="post" action="@Url.Action("Minus", "Cart")">
-                                        <input type="hidden" name="capyJson" value="@System.Text.Json.JsonSerializer.Serialize(capy.Capybara)" />
+                                        <input type="hidden" name="capyId" value="@capy.Capybara.CapybaraID" />
                                         <button type="submit" class="btn btn-outline-danger">
                                             <i class="fa-solid fa-square-minus"></i>
                                         </button>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="col-2 col-sm-4 col-lg-2 text-right">
                                     <form method="post" action="@Url.Action("Remove", "Cart")">
-                                        <input type="hidden" name="capyJson" value="@System.Text.Json.JsonSerializer.Serialize(capy.Capybara)" />
+                                        <input type="hidden" name="capyId" value="@capy.Capybara.CapybaraID" />
                                         <button type="submit" class="btn btn-danger">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>

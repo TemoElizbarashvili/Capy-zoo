@@ -34,15 +34,19 @@ namespace Kapizoo.Models
         public virtual void RemoveItem(Capybara capybara, int quantity)
         {
             CartLine line = Lines.Where(c => c.Capybara.CapybaraID == capybara.CapybaraID).FirstOrDefault();
-            if (line.Quantity == 1)
+            if (line != null)
             {
-                RemoveLine(capybara);
-            }
-            else
-            {
-                line.Quantity -= quantity;
+                if (line.Quantity <= quantity)
+                {
+                    RemoveLine(capybara);
+                }
+                else
+                {
+                    line.Quantity -= quantity;
+                }
             }
         }
+
 
         public virtual void RemoveLine(Capybara capybara) => Lines.RemoveAll(l => l.Capybara.CapybaraID == capybara.CapybaraID);
 
