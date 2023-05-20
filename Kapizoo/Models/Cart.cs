@@ -12,7 +12,7 @@ namespace Kapizoo.Models
 
     public class Cart
     {
-        public List<CartLine> Lines { get; set; } = new List<CartLine>();
+        public List<CartLine> Lines { get; set; } = new();
 
         public virtual void AddItem(Capybara capybara, int quantity)
         {
