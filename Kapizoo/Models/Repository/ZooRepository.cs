@@ -11,5 +11,7 @@ namespace Kapizoo.Models.Repository
         }
         public IQueryable<Capybara> Capybaras => _dbContext.Capybaras;
 
+        public IQueryable<GalleryPicture> GalleryPictures => _dbContext.GalleryPictures;
+
     }
 }

@@ -7,6 +7,8 @@ namespace Kapizoo.Models
         public ZooDbContext(DbContextOptions<ZooDbContext> options) : base(options) { }
 
         public DbSet<Capybara> Capybaras => Set<Capybara>();
+
+        public DbSet<GalleryPicture> GalleryPictures => Set<GalleryPicture>();
        
     }
 }

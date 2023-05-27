@@ -3,5 +3,7 @@
     public interface IZooRepository
     {
         IQueryable<Capybara> Capybaras { get; }
+
+        IQueryable<GalleryPicture> GalleryPictures { get; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model Cart
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Kapizoo.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-WCgK4Y...rZgKf6+" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation/1.19.2/jquery.validate.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -29,12 +32,15 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Store">Store</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Gallery</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                         </li>
                         <li class="nav-item dropdown text-white">
                             <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
                             <div class="dropdown-menu text-bg-white text-black">
-                                <a class="nav-link dropdown-item text-black" asp-area="">1</a>
+                                <a class="nav-link dropdown-item text-black" asp-area="" asp-controller="" asp-action="Index">Capybaras</a>
                                 <a class="nav-link dropdown-item text-black" asp-area="">2</a>
                                 <a class="nav-link dropdown-item text-black" asp-area="">3</a>
 
@@ -47,14 +53,6 @@
                     </ul>
                 </div>
                 <div class="navbar-text text-end ">
-                    @if (Model?.Lines.Count() > 0)
-                    {
-                        <small class="navbar-text">
-                            <b>Your cart:</b>
-                            @Model?.Lines.Sum(x => x.Quantity) item(s)
-                            @Model?.ComputeTotalValue().ToString("c")
-                        </small>
-                    }
                     <a class="btn btn-sm btn-secondary navbar-btn" asp-area="" asp-controller="Cart" asp-action="Index">
                         <i class="fa fa-shopping-cart"></i>
                     </a>
@@ -77,6 +75,16 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://kit.fontawesome.com/57c05df5db.js" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.tiny.cloud/1/ieyascy0pa9gbu63w6uy416424kisz54ydimzidw699kmpx1/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    ﻿
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
