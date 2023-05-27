@@ -4,7 +4,6 @@
     ViewData["Title"] = "CapyZoo - Cart";
 }
 
-<form method="post">
     <br />
     @if (!Model.Lines.Any())
     {
@@ -32,6 +31,9 @@
                     {
 
                         <div class="row">
+                        <div class="d-none d-lg-block col-lg-2 text-center py-2">
+                            <img src="@capy.Capybara.Image" class="rounded" width="120" height="80" />
+                        </div>
                             <div class="col-12 text-sm-center text-md-start col-md-5 pt-md-4">
                                 <h4><strong>@capy.Capybara.Name</strong></h4>
                                 <div class="badge bg-primary text-center" style="font-size:12px">
@@ -68,7 +70,7 @@
                                     <form method="post" action="@Url.Action("Minus", "Cart")">
                                         <input type="hidden" name="capyId" value="@capy.Capybara.CapybaraID" />
                                         <button type="submit" class="btn btn-outline-danger">
-                                            <i class="fa-solid fa-square-minus"></i> 
+                                            <i class="fa-solid fa-square-minus"></i>
                                         </button>
                                     </form>
                                 </div>
@@ -111,5 +113,3 @@
 
     }
     
-</form>
-

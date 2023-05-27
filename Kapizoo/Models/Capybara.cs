@@ -16,5 +16,7 @@ namespace Kapizoo.Models
         [StringLength(1)] // F or M
         public char gender { get; set; }
         public double Price { get; set; }  
+
+        public string Image { get; set; }
     }
 }
