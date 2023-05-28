@@ -100,5 +100,18 @@ namespace Kapizoo.Controllers
             return RedirectToAction("GalleryPictures");
         }
 
+        public async Task<IActionResult> GalleryPictureDelete(int galleryPictureId)
+        {
+            await _db.GalleryPicturesRepository.DeleteGalleryPicture(galleryPictureId);
+            return RedirectToAction("GalleryPictures");
+        }
+
+        [HttpGet]
+        public IActionResult Capybaras()
+        {
+            var capybarasList = _db.CapybaraRepository.List().ToList();
+            return View(capybarasList);
+        }
+
     }
 }

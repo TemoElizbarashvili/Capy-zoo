@@ -24,7 +24,9 @@ namespace Kapizoo.Models.Repository
 
         public Task DeleteGalleryPicture(int id)
         {
-            _db.GalleryPictures.ToList().RemoveAll(gp => gp.GalleryPictureId == id);
+            var objToRemove = _db.GalleryPictures.Where(galleryPicture => galleryPicture.GalleryPictureId == id).FirstOrDefault();
+            _db.GalleryPictures.Remove(objToRemove);
+            _db.SaveChanges();
             return Task.CompletedTask;
         }
 

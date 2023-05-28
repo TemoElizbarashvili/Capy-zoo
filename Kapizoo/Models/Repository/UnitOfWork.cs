@@ -11,10 +11,12 @@ namespace Kapizoo.Models.Repository
         {
             _db = db;
             GalleryPicturesRepository = new GalleryPicturesRepository(_db);
+            CapybaraRepository = new CapybaraRepository(_db);
         }
       
 
         public IGalleryPicturesRepository GalleryPicturesRepository { get; }
+        public ICapybaraRepository CapybaraRepository { get; }
 
         public Task SaveAsync()
         {

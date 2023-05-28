@@ -256,6 +256,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\galleryPictures\38c1a81e-b649-4b45-83d8-6f311e1620df.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\galleryPictures\44f9f185-dc6a-42d7-9ff1-fec4cd79a3b1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Kapizoo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Kapizoo</BasePath>
+      <RelativePath>img/galleryPictures/44f9f185-dc6a-42d7-9ff1-fec4cd79a3b1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\galleryPictures\44f9f185-dc6a-42d7-9ff1-fec4cd79a3b1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\galleryPictures\494ada85-d147-4ba7-8796-59d38c21589e.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Kapizoo</SourceId>

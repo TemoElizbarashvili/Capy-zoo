@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M755Ds/C9G3cBadznVnAHUyv+ctXMS76fk6ML//Kpew=",
+  "Hash": "if0CKnW6jRdU4LZ7aG97UyJCKS0VZNABT9MAgtdN/eg=",
   "Source": "Kapizoo",
   "BasePath": "_content/Kapizoo",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\galleryPictures\\38c1a81e-b649-4b45-83d8-6f311e1620df.jpg"
+    },
+    {
+      "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\Kapizoo\\wwwroot\\img\\galleryPictures\\44f9f185-dc6a-42d7-9ff1-fec4cd79a3b1.jpg",
+      "SourceId": "Kapizoo",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\Kapizoo\\wwwroot\\",
+      "BasePath": "_content/Kapizoo",
+      "RelativePath": "img/galleryPictures/44f9f185-dc6a-42d7-9ff1-fec4cd79a3b1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\galleryPictures\\44f9f185-dc6a-42d7-9ff1-fec4cd79a3b1.jpg"
     },
     {
       "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\Kapizoo\\wwwroot\\img\\galleryPictures\\494ada85-d147-4ba7-8796-59d38c21589e.jpg",
