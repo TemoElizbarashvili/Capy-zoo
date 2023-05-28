@@ -28,35 +28,35 @@ namespace Kapizoo.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Add(GalleryPicture galleryPicture)
-        {
-            string webRootPath = _hostEnvironment.WebRootPath;
-            var files = HttpContext.Request.Form.Files;
+        //[HttpPost]
+        //public IActionResult Add(GalleryPicture galleryPicture)
+        //{
+        //    string webRootPath = _hostEnvironment.WebRootPath;
+        //    var files = HttpContext.Request.Form.Files;
 
-            if(files.Count > 0)
-            {
-                string fileName_new = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"img/galleryPictures");
-                var extension = Path.GetExtension(files[0].FileName);
+        //    if(files.Count > 0)
+        //    {
+        //        string fileName_new = Guid.NewGuid().ToString();
+        //        var uploads = Path.Combine(webRootPath, @"img/galleryPictures");
+        //        var extension = Path.GetExtension(files[0].FileName);
 
-                using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new + extension), FileMode.Create))
-                {
-                    files[0].CopyTo(fileStream);
-                }
-                galleryPicture.Picture = @"\img\galleryPictures\" + fileName_new + extension;
-                _unitOfWork.GalleryPicturesRepository.CreateGalleryPicture(galleryPicture);
-            }
-            else
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View();
-                }
-            }
+        //        using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new + extension), FileMode.Create))
+        //        {
+        //            files[0].CopyTo(fileStream);
+        //        }
+        //        galleryPicture.Picture = @"\img\galleryPictures\" + fileName_new + extension;
+        //        _unitOfWork.GalleryPicturesRepository.CreateGalleryPicture(galleryPicture);
+        //    }
+        //    else
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View();
+        //        }
+        //    }
           
-            return RedirectToAction("Index");
-        }
+        //    return RedirectToAction("Index");
+        //}
 
     }
 }

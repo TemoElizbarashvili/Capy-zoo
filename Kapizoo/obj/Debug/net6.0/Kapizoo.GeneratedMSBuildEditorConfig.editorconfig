@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2FweWJhcmFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/random shit/ფაილები/ASP.NET/ფინალური პროექტი/Kapizoo/Views/Admin/GalleryPictures.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2FsbGVyeVBpY3R1cmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/random shit/ფაილები/ASP.NET/ფინალური პროექტი/Kapizoo/Views/Admin/GalleryPictureUpsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2FsbGVyeVBpY3R1cmVVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/random shit/ფაილები/ASP.NET/ფინალური პროექტი/Kapizoo/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/random shit/ფაილები/ASP.NET/ფინალური პროექტი/Kapizoo/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/random shit/ფაილები/ASP.NET/ფინალური პროექტი/Kapizoo/Views/Shared/_Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/random shit/ფაილები/ASP.NET/ფინალური პროექტი/Kapizoo/Views/Shared/_ValidationScriptsPartial.cshtml]
