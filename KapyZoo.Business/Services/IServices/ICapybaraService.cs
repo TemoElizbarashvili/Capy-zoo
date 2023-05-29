@@ -10,9 +10,11 @@ namespace KapyZoo.Business.Services.IServices
     public interface ICapybaraService
     {
         public IQueryable<Capybara> List();
-        public Task<Capybara> GetByIdAsync(int id);
+        public Capybara GetById(int id);
         public Task CreateCapybara(Capybara capy);
         public Task DeleteCapybara(int id);
         public Task EditCapybara(Capybara capy);
+
+        public Task SaveAsync();
     }
 }

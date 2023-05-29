@@ -1,11 +1,6 @@
 ﻿using KapyZoo.Business.Services.IServices;
 using KapyZoo.DAL.Context;
 using KapyZoo.Shared.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KapyZoo.Business.Services
 {
@@ -38,7 +33,7 @@ namespace KapyZoo.Business.Services
             var objFromDbtoEdit = _db.Capybaras.ToList().Where(c => c.CapybaraID == capy.CapybaraID).FirstOrDefault();
 
             objFromDbtoEdit.Price = capy.Price;
-            objFromDbtoEdit.gender = capy.gender;
+            objFromDbtoEdit.Gender = capy.Gender;
             objFromDbtoEdit.Age = capy.Age;
             objFromDbtoEdit.Description = capy.Description;
             objFromDbtoEdit.Name = capy.Name;
@@ -47,14 +42,19 @@ namespace KapyZoo.Business.Services
             return Task.CompletedTask;
         }
 
-        public async Task<Capybara> GetByIdAsync(int id)
+        public  Capybara GetById(int id)
         {
-            return await Task.FromResult(_db.Capybaras.First(capy => capy.CapybaraID == id));
+            return _db.Capybaras.FirstOrDefault(capy => capy.CapybaraID == id);
         }
 
         public IQueryable<Capybara> List()
         {
             return _db.Capybaras;
+        }
+
+        public async Task SaveAsync()
+        {
+            await _db.SaveChangesAsync();
         }
     }
 }

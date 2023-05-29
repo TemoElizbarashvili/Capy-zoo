@@ -38,7 +38,7 @@ namespace KapyZoo.DAL.Repositories
             var objFromDbtoEdit = _db.Capybaras.ToList().Where(c => c.CapybaraID == capy.CapybaraID).FirstOrDefault();
 
             objFromDbtoEdit.Price = capy.Price;
-            objFromDbtoEdit.gender = capy.gender;
+            objFromDbtoEdit.Gender = capy.Gender;
             objFromDbtoEdit.Age = capy.Age;
             objFromDbtoEdit.Description = capy.Description;
             objFromDbtoEdit.Name = capy.Name;

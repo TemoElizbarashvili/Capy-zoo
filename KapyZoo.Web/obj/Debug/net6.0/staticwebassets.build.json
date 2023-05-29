@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uI6gWQ6SOdTuOxPHqnenLbXANIiHvZr8WS0E1VJy5So=",
+  "Hash": "1MtaYRp4vpso7l7aRJN+6Zi33d20V5I2mWFprlnQPCA=",
   "Source": "KapyZoo.Web",
   "BasePath": "_content/KapyZoo.Web",
   "Mode": "Default",
@@ -578,6 +578,23 @@
       "OriginalItemSpec": "wwwroot\\img\\galleryPictures\\b2cd3a9c-e978-48f9-af96-eb194d820f9a.jpg"
     },
     {
+      "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\galleryPictures\\b4181508-9ab3-400b-812d-c494e2a06abd.jpg",
+      "SourceId": "KapyZoo.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\",
+      "BasePath": "_content/KapyZoo.Web",
+      "RelativePath": "img/galleryPictures/b4181508-9ab3-400b-812d-c494e2a06abd.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\galleryPictures\\b4181508-9ab3-400b-812d-c494e2a06abd.jpg"
+    },
+    {
       "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\galleryPictures\\c74fad4a-a7a5-4aea-8750-5a4379262eed.jpg",
       "SourceId": "KapyZoo.Web",
       "SourceType": "Discovered",
@@ -644,6 +661,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\galleryPictures\\f5bfe964-e5c6-4523-aec3-639d0908a923.jpg"
+    },
+    {
+      "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\galleryPictures\\fb3006d4-b6b2-463c-836b-4333ad5cb84d.jpg",
+      "SourceId": "KapyZoo.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\",
+      "BasePath": "_content/KapyZoo.Web",
+      "RelativePath": "img/galleryPictures/fb3006d4-b6b2-463c-836b-4333ad5cb84d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\galleryPictures\\fb3006d4-b6b2-463c-836b-4333ad5cb84d.jpg"
     },
     {
       "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\hero-capy.webp",

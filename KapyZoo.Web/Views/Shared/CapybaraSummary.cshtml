@@ -10,14 +10,7 @@
         <img class="card-img-top img-fluid d-inline-block mx-auto mb-3 img" style="width: 100%; height: 15vw; object-fit: cover;" src="@Model.Image" alt="capy image" />
         <div class="gender-age-container">
             <div>
-                @if (Model.gender == 'F')
-                {
-                    <span class="badge p-2 border w-100 text-dark bg-warning">Female</span>
-                }
-                else
-                {
-                    <span class="badge p-2 border w-100 text-dark bg-warning">Male</span>
-                }
+                    <span class="badge p-2 border w-100 text-dark bg-warning">@Model.Gender</span>
             </div>
             <div>
                 <span class="badge p-2 border w-100 text-dark bg-info">Age: @Model.Age</span>

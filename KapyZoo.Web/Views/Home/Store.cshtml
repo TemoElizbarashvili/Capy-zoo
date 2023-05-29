@@ -41,6 +41,10 @@
     <h2 class="pl-1 mt-2"><b>Available Capybaras</b></h2>
     <div class="col-12">
         <div class="card-container">
+            @if (!(((List<Capybara>)ViewData["Capybaras"])).Any())
+            {
+                <p>There is no Capybaras avialable</p>
+            }
             @foreach (var c in (List<Capybara>)ViewData["Capybaras"])
             {
                 <partial name="CapybaraSummary" model="c" />

@@ -58,7 +58,10 @@
 <!-- end of styles for gallery index html -->
 
 <div class="gallery-container">
-    
+    @if (!Model.Any())
+    {
+        <h4>No photos to show :(</h4>
+    }
     @foreach (var item in Model)
     {
         <div class="gallery-item rounded-2">
