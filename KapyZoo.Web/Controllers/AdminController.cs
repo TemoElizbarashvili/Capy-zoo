@@ -1,9 +1,7 @@
-﻿using KapyZoo.Business.Services;
-using KapyZoo.Business.Services.IServices;
-using KapyZoo.DAL.UnitOfWork.Contract;
+﻿using KapyZoo.Business.Services.IServices;
 using KapyZoo.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
+
 
 namespace Kapizoo.Controllers
 {

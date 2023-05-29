@@ -43,7 +43,7 @@
         <div class="card-container">
             @if (!(((List<Capybara>)ViewData["Capybaras"])).Any())
             {
-                <p>There is no Capybaras avialable</p>
+                <h4>There is no Capybaras avialable</h4>
             }
             @foreach (var c in (List<Capybara>)ViewData["Capybaras"])
             {

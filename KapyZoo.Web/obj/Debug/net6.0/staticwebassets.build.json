@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1MtaYRp4vpso7l7aRJN+6Zi33d20V5I2mWFprlnQPCA=",
+  "Hash": "GXom1/iwl4qpp5YL11XkzkP9Ox8SV9K1IwmvQSM7oS8=",
   "Source": "KapyZoo.Web",
   "BasePath": "_content/KapyZoo.Web",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\sketchy.css"
+    },
+    {
+      "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\css\\Style.css",
+      "SourceId": "KapyZoo.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\",
+      "BasePath": "_content/KapyZoo.Web",
+      "RelativePath": "css/Style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Style.css"
     },
     {
       "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\favicon.ico",
