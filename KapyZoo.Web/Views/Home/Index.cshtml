@@ -1,0 +1,87 @@
+﻿﻿@{
+    ViewData["Title"] = "Capy Zoo";
+}
+
+<style>
+    /* Add your custom styles here */
+    .jumbotron {
+        text-align: center;
+        margin-bottom: 0;
+        padding: 2rem;
+    }
+
+    .card {
+        margin-bottom: 2rem;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 15vw;
+        object-fit: cover;
+    }
+</style>
+<body>
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Capybara Zoo</h1>
+        <p class="lead">Visit our Zoo right now!</p>
+        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Home" asp-action="About" role="button">Learn more</a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Capybaras</h2>
+                    <p>
+                        Capybaras are the largest rodents in the world. They are native to South America and are known for their
+                        semi-aquatic lifestyle. These gentle creatures are often found near bodies of water and have a friendly
+                        temperament.
+                    </p>
+                    <p>
+                        At Capybara Zoo, we provide a safe and natural environment for capybaras, allowing visitors to observe and
+                        learn more about these unique animals.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="~/img/home-about.jpg" alt="Capybara" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/img/capybara-enjoying-sun.jpg" alt="Capybara 1" class="card-img card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Capybara enjoying a sunny day</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/img/Capybara-family-relaxing-together.jpg" alt="Capybara 2" class="card-img card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Capybara family relaxing together</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="~/img/Capybara-taking-a-dip-in-the-water.jpg" alt="Capybara 3" class="card-img card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Capybara taking a dip in the water</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>

@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.DAL\\KapyZoo.DAL.csproj": {}
+  },
+  "projects": {
+    "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.DAL\\KapyZoo.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.DAL\\KapyZoo.DAL.csproj",
+        "projectName": "KapyZoo.DAL",
+        "projectPath": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.DAL\\KapyZoo.DAL.csproj",
+        "packagesPath": "C:\\Users\\temoe\\.nuget\\packages\\",
+        "outputPath": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\temoe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Shared\\KapyZoo.Shared.csproj": {
+                "projectPath": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Shared\\KapyZoo.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Shared\\KapyZoo.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Shared\\KapyZoo.Shared.csproj",
+        "projectName": "KapyZoo.Shared",
+        "projectPath": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Shared\\KapyZoo.Shared.csproj",
+        "packagesPath": "C:\\Users\\temoe\\.nuget\\packages\\",
+        "outputPath": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\temoe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
