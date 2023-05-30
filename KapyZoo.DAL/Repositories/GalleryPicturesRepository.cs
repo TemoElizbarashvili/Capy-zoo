@@ -20,7 +20,6 @@ namespace KapyZoo.DAL.Repositories
 
         public Task CreateGalleryPicture(GalleryPicture galleryPicture)
         {
-            //galleryPicture.GalleryPictureId = _db.GalleryPictures.ToList().MaxBy(gp => gp.GalleryPictureId).GalleryPictureId + 1;
             _db.GalleryPictures.Add(galleryPicture);
 
             _db.SaveChanges();

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ah8RSKZHeq+ExRzSgtKKDFSvIkuXFcRufltGCdgaeRs=",
+  "Hash": "TzaU8XUkjxOSH+Mjp0NY9Q4xmb9QpciJKlDpnt+m+98=",
   "Source": "KapyZoo.Web",
   "BasePath": "_content/KapyZoo.Web",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\capygame.jpg"
+    },
+    {
+      "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\Completed-order.jpg",
+      "SourceId": "KapyZoo.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\",
+      "BasePath": "_content/KapyZoo.Web",
+      "RelativePath": "img/Completed-order.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Completed-order.jpg"
     },
     {
       "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\galleryPictures\\191d36d2-de82-449a-97ee-5d07c6904c18.jpg",

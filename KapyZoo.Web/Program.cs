@@ -18,6 +18,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICapybaraService, CapybaraService>();
 builder.Services.AddScoped<IGalleryPicturesService, GalleryPicturesService>();
 builder.Services.AddScoped<IZooService, ZooService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));

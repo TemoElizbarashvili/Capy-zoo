@@ -11,6 +11,7 @@ namespace KapyZoo.DAL.UnitOfWork.Contract
     {
         public IGalleryPicturesRepository GalleryPicturesRepository { get; }
         public ICapybaraRepository CapybaraRepository { get; }
+        public IOrderRepository OrderRepository { get; }
         public Task SaveAsync();
 
     }

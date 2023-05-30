@@ -20,11 +20,14 @@ namespace KapyZoo.DAL.UnitOfWork
             _db = db;
             GalleryPicturesRepository = new GalleryPicturesRepository(_db);
             CapybaraRepository = new CapybaraRepository(_db);
+            OrderRepository = new OrderRepository(_db);
         }
 
 
         public IGalleryPicturesRepository GalleryPicturesRepository { get; }
         public ICapybaraRepository CapybaraRepository { get; }
+
+        public IOrderRepository OrderRepository { get; }
 
         public Task SaveAsync()
         {
