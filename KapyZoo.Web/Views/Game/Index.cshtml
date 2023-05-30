@@ -1,0 +1,46 @@
+﻿<style>
+  
+
+    .game-instructions {
+      margin-bottom: 40px;
+    }
+
+    .game-advertisement {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .game-advertisement img {
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .game-advertisement p {
+      margin-left: 20px;
+      font-size: 18px;
+      color: #333333;
+    }
+  </style>
+    <div class="container mt-2">
+        <h1>Welcome to the Capybara Game!</h1>
+
+        <div class="game-instructions">
+            <h2>Instructions:</h2>
+            <p>In this game, your goal is to click on the capybara as many times as you can within 30 seconds. Each click will earn you a point.</p>
+            <p>Click the capybara whenever it appears on the screen to score points. Be quick and try to beat your high score!</p>
+        </div>
+
+        <div class="game-advertisement border border-3">
+            <a asp-area="" asp-controller="Game" asp-action="Game">
+                <img src="/img/capygame.jpg" alt="Capybara Game Promo" class="rounded">
+            </a>
+            <p>Click the Image now and enjoy endless capybara clicking fun!</p>
+        </div>
+
+        <h2>Get ready to have a great time with Capybara Game!</h2>
+
+       
+    </div>

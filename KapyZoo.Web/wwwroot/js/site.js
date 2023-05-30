@@ -26,7 +26,7 @@ function handleCapybaraClick(event) {
 
 // Initialize score and game duration
 let score = 0;
-const gameDuration = 3; // 30 seconds
+const gameDuration = 30; // 30 seconds
 
 // Function to update score
 function updateScore() {
@@ -44,9 +44,9 @@ function moveCapybara() {
     capybara.style.left = `${randomX}px`;
     capybara.style.top = `${randomY}px`;
 
-    setTimeout(moveCapybara, 700); // Move capybara every 2 seconds
+    setTimeout(moveCapybara, 650); // Move capybara every 2 seconds
     if (timeLeft == 0) {
-        setTimeout(moveCapybara, 0);
+        setTimeout(moveCapybara,);
     }
 }
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GXom1/iwl4qpp5YL11XkzkP9Ox8SV9K1IwmvQSM7oS8=",
+  "Hash": "ah8RSKZHeq+ExRzSgtKKDFSvIkuXFcRufltGCdgaeRs=",
   "Source": "KapyZoo.Web",
   "BasePath": "_content/KapyZoo.Web",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Capybara-taking-a-dip-in-the-water.jpg"
+    },
+    {
+      "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\capygame.jpg",
+      "SourceId": "KapyZoo.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\",
+      "BasePath": "_content/KapyZoo.Web",
+      "RelativePath": "img/capygame.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\capygame.jpg"
     },
     {
       "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\galleryPictures\\191d36d2-de82-449a-97ee-5d07c6904c18.jpg",
@@ -729,6 +746,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\home-about.jpg"
+    },
+    {
+      "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\pngtree-chill-capybara-png-image_8667135.png",
+      "SourceId": "KapyZoo.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\",
+      "BasePath": "_content/KapyZoo.Web",
+      "RelativePath": "img/pngtree-chill-capybara-png-image_8667135.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\pngtree-chill-capybara-png-image_8667135.png"
     },
     {
       "Identity": "F:\\random shit\\ფაილები\\ASP.NET\\ფინალური პროექტი\\KapyZoo.Web\\wwwroot\\img\\zoo-capybara.jpg",

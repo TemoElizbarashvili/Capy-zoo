@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace KapyZoo.Web.Controllers
 {
-    public class TestController : Controller
+    public class GameController : Controller
     {
         private IGalleryPicturesService _galleryPicturesService;
 
-        public TestController(IGalleryPicturesService gps)
+        public GameController(IGalleryPicturesService gps)
         {
             _galleryPicturesService = gps;
         }
@@ -16,6 +16,11 @@ namespace KapyZoo.Web.Controllers
         public IActionResult Index()
         {
             
+            return View();
+        }
+
+        public IActionResult Game()
+        {
             return View();
         }
     }
