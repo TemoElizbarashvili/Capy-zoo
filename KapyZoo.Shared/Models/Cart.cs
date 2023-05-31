@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KapyZoo.Shared.Models
+﻿namespace KapyZoo.Shared.Models
 {
     public class CartLine
     {
         public int CartLineID { get; set; }
+        
         public Capybara Capybara { get; set; } = new Capybara();
         public int Quantity { get; set; }
     }

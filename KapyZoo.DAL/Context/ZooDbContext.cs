@@ -17,6 +17,6 @@ namespace KapyZoo.DAL.Context
         public DbSet<GalleryPicture> GalleryPictures => Set<GalleryPicture>();
 
         public DbSet<Order> Orders => Set<Order>();
-
+        
     }
 }

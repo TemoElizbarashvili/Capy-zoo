@@ -1,11 +1,7 @@
 ﻿using Kapizoo.Models.ViewModels;
-using KapyZoo.Business.Services;
 using KapyZoo.Business.Services.IServices;
-using KapyZoo.DAL.Repositories.IRepository;
 using KapyZoo.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
-using KapyZoo.Web.Models;
-using System.Diagnostics;
 
 namespace Kapizoo.Controllers
 {
@@ -49,24 +45,21 @@ namespace Kapizoo.Controllers
                     TotalItems = _zooService.Capybaras.Count()
                 }
             };
-            List<Capybara> capybaras = _zooService.Capybaras.ToList();
-            ViewData["Capybaras"] = capybaras;
             return View(viewModelForStore);
 
         }
 
         [HttpPost]
-        public IActionResult Store(long capyId)
+        public IActionResult Store(long capyId, int currPg)
         {
             Capybara capy = _zooService.Capybaras.FirstOrDefault(c => c.CapybaraID == capyId);
             if (capy != null)
             {
                 cart.AddItem(capy, 1);
             }
-            List<Capybara> capybaras = _zooService.Capybaras.ToList();
-            ViewData["Capybaras"] = capybaras;
-            return RedirectToAction("Store");
+            string currentPath = HttpContext.Request.Path + HttpContext.Request.QueryString;
+            int currPage = currentPath.LastOrDefault();
+            return RedirectToAction("Index", "Cart");
         }
-
     }
 }

@@ -107,9 +107,7 @@ namespace Kapizoo.Controllers
             var objFromDb = await _galleryPicturesService.GetByIdAsync(galleryPictureId);
             string fileName_new = Guid.NewGuid().ToString();
             string webRootPath = _hostEnvironment.WebRootPath;
-            var files = HttpContext.Request.Form.Files;
             var uploads = Path.Combine(webRootPath, @"img/galleryPictures");
-            var extension = Path.GetExtension(files[0].FileName);
 
             //delete image from files
             var oldImagePath = Path.Combine(webRootPath, objFromDb.Picture.TrimStart('\\'));
@@ -181,7 +179,7 @@ namespace Kapizoo.Controllers
                 if (files.Count > 0)
                 {
                     string fileName_new = Guid.NewGuid().ToString();
-                    var uploads = Path.Combine(webRootPath, @"img/galleryPictures");
+                    var uploads = Path.Combine(webRootPath, @"img/Capybara");
                     var extension = Path.GetExtension(files[0].FileName);
 
                     //delete old image
@@ -196,7 +194,7 @@ namespace Kapizoo.Controllers
                     {
                         files[0].CopyTo(fileStream);
                     }
-                    objToWorkWith.Image = @"\img\galleryPictures\" + fileName_new + extension;
+                    objToWorkWith.Image = @"\img\Capybara\" + fileName_new + extension;
                 }
                 else
                 {
@@ -216,9 +214,22 @@ namespace Kapizoo.Controllers
 
         public async Task<IActionResult> CapybaraDelete(int capybaraId)
         {
+            var objToWorkWith = _capybarasService.GetById(capybaraId);
+            string webRootPath = _hostEnvironment.WebRootPath;
+            var files = HttpContext.Request.Form.Files;
+            string fileName_new = Guid.NewGuid().ToString();
+            var uploads = Path.Combine(webRootPath, @"img/Capybara");
+            var extension = Path.GetExtension(files[0].FileName);
+
+            //delete old image
+            var oldImagePath = Path.Combine(webRootPath, objToWorkWith.Image.TrimStart('\\'));
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
+
 
             await _capybarasService.DeleteCapybara(capybaraId);
-
 
             return RedirectToAction("Capybaras");
         }
