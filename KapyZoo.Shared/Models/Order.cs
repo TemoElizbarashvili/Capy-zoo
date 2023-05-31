@@ -13,13 +13,14 @@ namespace KapyZoo.Shared.Models
         [BindNever]
         public int OrderId { get; set; }
         [BindNever]
+        
         public ICollection<CartLine> Lines { get; set; }
         [Required(ErrorMessage ="Please enter your name")]
         public string Name { get;  set; }
         [Required(ErrorMessage = "Please enter your first addres line")]
-        public string addresLine1 { get; set; }
-        public string addresLine2 { get; set; }
-        public string addresLine3 { get; set; }
+        public string AddresLine1 { get; set; }
+        public string AddresLine2 { get; set; }
+        public string AddresLine3 { get; set; }
         [BindNever]
         public bool Shipped { get; set; }
 

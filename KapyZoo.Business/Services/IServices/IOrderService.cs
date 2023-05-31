@@ -13,7 +13,7 @@ namespace KapyZoo.Business.Services.IServices
         public Task<Order> GetByIdAsync(int id);
         public Task CreateOrder(Order order);
         public Task DeleteOrder(int id);
-        public Task EditOrder(Order order);
+        public Task ShipTheOrder(Order order);
         public Task SaveAsync();
        
     }

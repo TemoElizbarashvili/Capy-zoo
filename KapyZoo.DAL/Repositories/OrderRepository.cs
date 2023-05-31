@@ -33,9 +33,9 @@ namespace KapyZoo.DAL.Repositories
         public Task EditOrder(Order order)
         {
             var orderToEdit = _db.Orders.Where(ord => ord.OrderId == order.OrderId).FirstOrDefault();
-            orderToEdit.addresLine1 = order.addresLine1;
-            orderToEdit.addresLine2 = order.addresLine2;
-            orderToEdit.addresLine3 = order.addresLine3;
+            orderToEdit.AddresLine1 = order.AddresLine1;
+            orderToEdit.AddresLine2 = order.AddresLine2;
+            orderToEdit.AddresLine3 = order.AddresLine3;
             orderToEdit.Lines = order.Lines;
             orderToEdit.Name = order.Name;
             orderToEdit.Shipped = order.Shipped;

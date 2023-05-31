@@ -2,17 +2,18 @@
 using KapyZoo.DAL.Context;
 using KapyZoo.DAL.UnitOfWork.Contract;
 using KapyZoo.Shared.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace KapyZoo.Business.Services
 {
     public class OrderService : IOrderService
     {
         private ZooDbContext _db;
-
         public OrderService(ZooDbContext db)
         {
             _db = db;
         }
+        public IQueryable<Order> Orders => _db.Orders.Include(o => o.Lines).ThenInclude(o => o.Capybara);
 
         public Task CreateOrder(Order order)
         {
@@ -24,21 +25,16 @@ namespace KapyZoo.Business.Services
 
         public async Task DeleteOrder(int id)
         {
-            var orderToRemove = _db.Orders.Where(order => order.OrderId == id).FirstOrDefault();
-            await Task.FromResult(_db.Orders.Remove(orderToRemove));
+            var orderFromDb = _db.Orders.Where(o => o.OrderId == id).Include(o => o.Lines).FirstOrDefault();
+            orderFromDb.Lines = null;
+            await Task.FromResult(_db.Orders.Remove(orderFromDb));
             _db.SaveChanges();
         }
 
-        public Task EditOrder(Order order)
+        public Task ShipTheOrder(Order order)
         {
-            var orderToEdit = _db.Orders.Where(ord => ord.OrderId == order.OrderId).FirstOrDefault();
-            orderToEdit.addresLine1 = order.addresLine1;
-            orderToEdit.addresLine2 = order.addresLine2;
-            orderToEdit.addresLine3 = order.addresLine3;
-            orderToEdit.Lines = order.Lines;
-            orderToEdit.Name = order.Name;
-            orderToEdit.Shipped = order.Shipped;
-            _db.SaveChanges();
+            var orderToShip = _db.Orders.Where(ord => ord.OrderId == order.OrderId).FirstOrDefault();
+            orderToShip.Shipped = true;
             return Task.CompletedTask;
         }
 
@@ -49,7 +45,7 @@ namespace KapyZoo.Business.Services
 
         public async Task<IQueryable<Order>> ListAsync()
         {
-            return await Task.FromResult(_db.Orders);
+            return await Task.FromResult(_db.Orders.Include(o => o.Lines).ThenInclude(o => o.Capybara));
         }
 
         public async Task SaveAsync()

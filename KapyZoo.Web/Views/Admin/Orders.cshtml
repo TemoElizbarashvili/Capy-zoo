@@ -1,0 +1,59 @@
+﻿@using KapyZoo.Shared.Models;
+@model IEnumerable<Order> 
+
+<div class="container">
+    <h1>Manage <b>Orders</b></h1>
+    <div class="row">
+        <h2>Ready to ship Orders</h2>
+        @foreach(var order in (Model.Where(o => o.Shipped == false)))
+        {
+        <div class="col-md-4 mb-1">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order ID: @order.OrderId</h5>
+                    <p class="card-text">Customer Name: @order.Name</p>
+                    <p class="card-text">Address 1: @order.AddresLine1</p>
+                    <p class="card-text">Address 2: @((order?.AddresLine2 == null) ? "Not specified" : order.AddresLine2)</p>
+                    <p class="card-text">Address 3: @((order?.AddresLine3 == null) ? "Not specified" : order.AddresLine3)</p>
+                    <p class="card-text">Ordered Capybaras: </p>
+                    
+                        @foreach(var item in order.Lines)
+                        {
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-1 card-text"></div>
+                                <div class="col-sm-5">Product: @item.Capybara.Name</div>
+                                <div class="col-sm-5">Quantity: @item.Quantity</div>
+                            </div>
+                            <hr />
+                        }
+                        <p class="card-text">Order Status: Ready to ship</p>
+                        <div class="card-text text-end">
+                                <a asp-area="" asp-controller="Admin" asp-action="OrdersShip" asp-route-orderId="@order.OrderId" class="btn btn-primary" data-toggle="modal">ship</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        }
+        <hr />
+        <h2>Shipped Orders</h2>
+        @foreach (var order in (Model.Where(o => o.Shipped == true)))
+        {
+            <div class="col-md-4 mb-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Order ID: @order.OrderId</h5>
+                        <p class="card-text">Customer Name: @order.Name</p>
+                        <p class="card-text">Address 1: @order.AddresLine1</p>
+                        <p class="card-text">Address 2: @((order?.AddresLine2 == null) ? "Not specified" : order.AddresLine2)</p>
+                        <p class="card-text">Address 3: @((order?.AddresLine3 == null) ? "Not specified" : order.AddresLine3)</p>
+                        <p class="card-text">Order Status: shipped</p>
+                        <div class="card-text text-end">
+                                <a asp-area="" asp-controller="Admin" asp-action="OrdersDelete" asp-route-orderId="@order.OrderId" class="btn btn-danger" data-toggle="modal">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

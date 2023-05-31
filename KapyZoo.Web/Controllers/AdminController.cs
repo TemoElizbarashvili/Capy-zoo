@@ -9,12 +9,14 @@ namespace Kapizoo.Controllers
     {
         private ICapybaraService _capybarasService;
         private IGalleryPicturesService _galleryPicturesService;
+        private IOrderService _orderService;
         private readonly IWebHostEnvironment _hostEnvironment;
 
-        public AdminController(ICapybaraService cs, IGalleryPicturesService gps, IWebHostEnvironment hostEnvironment)
+        public AdminController(ICapybaraService cs, IGalleryPicturesService gps, IWebHostEnvironment hostEnvironment, IOrderService os)
         {
             _capybarasService = cs;
             _galleryPicturesService = gps;
+            _orderService = os;
             _hostEnvironment = hostEnvironment;
         }
 
@@ -235,5 +237,25 @@ namespace Kapizoo.Controllers
             return RedirectToAction("Capybaras");
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> Orders()
+        {
+            var listOfOrders = await _orderService.ListAsync();
+            return View(listOfOrders.ToList());
+        }
+
+        public async Task<IActionResult> OrdersShip(int orderId)
+        {
+            var objFromDb = await _orderService.GetByIdAsync(orderId);
+            await _orderService.ShipTheOrder(objFromDb);
+            return RedirectToAction("Orders");
+        }
+
+        public async Task<IActionResult> OrdersDelete(int orderId)
+        { 
+            await _orderService.DeleteOrder(orderId);
+            return RedirectToAction("Orders");
+        }
     }
 }
