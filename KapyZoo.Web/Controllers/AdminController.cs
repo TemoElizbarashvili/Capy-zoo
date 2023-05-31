@@ -216,27 +216,12 @@ namespace Kapizoo.Controllers
 
         public async Task<IActionResult> CapybaraDelete(int capybaraId)
         {
-            var objFromDb = _capybarasService.GetById(capybaraId);
-            string webRootPath = _hostEnvironment.WebRootPath;
-            var files = HttpContext.Request.Form.Files;
-            string fileName_new = Guid.NewGuid().ToString();
-            var uploads = Path.Combine(webRootPath, @"img/galleryPictures");
-            var extension = Path.GetExtension(files[0].FileName);
-
-            //delete image From files
-            var oldImagePath = Path.Combine(webRootPath, objFromDb.Image.TrimStart('\\'));
-            if (System.IO.File.Exists(oldImagePath))
-            {
-                System.IO.File.Delete(oldImagePath);
-            }
-
 
             await _capybarasService.DeleteCapybara(capybaraId);
 
 
             return RedirectToAction("Capybaras");
         }
-
 
         [HttpGet]
         public async Task<IActionResult> Orders()

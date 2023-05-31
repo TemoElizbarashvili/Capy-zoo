@@ -26,6 +26,7 @@ namespace KapyZoo.Business.Services
         public async Task DeleteOrder(int id)
         {
             var orderFromDb = _db.Orders.Where(o => o.OrderId == id).Include(o => o.Lines).FirstOrDefault();
+            orderFromDb.Lines.Clear();
             orderFromDb.Lines = null;
             await Task.FromResult(_db.Orders.Remove(orderFromDb));
             _db.SaveChanges();
@@ -35,6 +36,7 @@ namespace KapyZoo.Business.Services
         {
             var orderToShip = _db.Orders.Where(ord => ord.OrderId == order.OrderId).FirstOrDefault();
             orderToShip.Shipped = true;
+            _db.SaveChanges();
             return Task.CompletedTask;
         }
 

@@ -1,5 +1,5 @@
-﻿@using KapyZoo.Shared.Models;
-@model Cart
+﻿@using Kapizoo.Models.ViewModels;
+@model StoreViewModel
 @{
     ViewData["Title"] = "CapyZoo - Store";
 }
@@ -41,14 +41,30 @@
     <h2 class="pl-1 mt-2"><b>Available Capybaras</b></h2>
     <div class="col-12">
         <div class="card-container">
-            @if (!(((List<Capybara>)ViewData["Capybaras"])).Any())
+            @if (!Model.Capybaras.Any())
             {
                 <h4>There is no Capybaras avialable</h4>
             }
-            @foreach (var c in (List<Capybara>)ViewData["Capybaras"])
+            @foreach (var c in Model.Capybaras)
             {
                 <partial name="CapybaraSummary" model="c" />
             }
         </div>
     </div>
 </div>
+
+
+<ul class="pagination ">
+    <li class="page-item @(Model.PagingInfo.CurrentPage == 1 ? "disabled" : "")">
+        <a asp-area="" asp-controller="Home" asp-action="Store" asp-route-productPage="1" class="page-link">&laquo;</a>
+    </li>
+    @for (int i = 1; i < Model.PagingInfo.TotalPages + 1; i++)
+    {
+        <li class="page-item @(Model.PagingInfo.CurrentPage == i ? "active" : "")">
+            <a asp-area="" asp-controller="Home" asp-action="Store" asp-route-productPage="@i" class="page-link">@i</a>
+        </li>
+    }
+    <li class="page-item @(Model.PagingInfo.CurrentPage == Model.PagingInfo.TotalPages ? "disabled" : "")">
+        <a asp-area="" asp-controller="Home" asp-action="Store" asp-route-productPage="@Model.PagingInfo.TotalPages" class="page-link">&raquo;</a>
+    </li>
+</ul>

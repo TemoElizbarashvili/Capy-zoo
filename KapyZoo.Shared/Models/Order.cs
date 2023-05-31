@@ -13,7 +13,6 @@ namespace KapyZoo.Shared.Models
         [BindNever]
         public int OrderId { get; set; }
         [BindNever]
-        
         public ICollection<CartLine> Lines { get; set; }
         [Required(ErrorMessage ="Please enter your name")]
         public string Name { get;  set; }

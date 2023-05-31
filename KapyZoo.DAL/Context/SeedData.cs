@@ -72,6 +72,69 @@ namespace KapyZoo.DAL.Context
                         Gender = "Male",
                         Price = 5000,
                         Image = "https://i.pinimg.com/564x/99/d7/85/99d78527baf3e70242a8bc02c8012b0d.jpg"
+                    },
+                    new Capybara
+                    {
+                        Name = "Cute Capy",
+                        Age = 1,
+                        Description = "the best capybara",
+                        Gender = "Male",
+                        Price = 5000,
+                        Image = "https://i.pinimg.com/originals/3a/dd/29/3add29725ad134618f28fb2f6752411b.jpg"
+                    },
+                    new Capybara
+                    {
+                        Name = "Water Capy",
+                        Age = 1,
+                        Description = "the best capybara",
+                        Gender = "Male",
+                        Price = 5000,
+                        Image = "https://i.pinimg.com/originals/79/d8/aa/79d8aad4a9c886a374bb434e6ded63e2.jpg"
+                    },
+                    new Capybara
+                    {
+                        Name = "Friendly Capy",
+                        Age = 1,
+                        Description = "the best capybara",
+                        Gender = "Male",
+                        Price = 5000,
+                        Image = "https://i.pinimg.com/originals/90/2c/94/902c94c523e2bd1fbd30365546663b0d.jpg"
+                    },
+                    new Capybara
+                    {
+                        Name = "Cow Capy",
+                        Age = 1,
+                        Description = "the best capybara",
+                        Gender = "Male",
+                        Price = 300,
+                        Image = "https://i.pinimg.com/originals/aa/7f/bf/aa7fbf14e5b088a55d9c3a65d41ea111.jpg"
+                    },
+                    new Capybara
+                    {
+                        Name = "Worker Capy",
+                        Age = 1,
+                        Description = "the best capybara",
+                        Gender = "Male",
+                        Price = 145.23,
+                        Image = "https://i.pinimg.com/originals/a8/98/2e/a8982e097d43143d004244094bd1f7d3.jpg"
+                    },
+                    new Capybara
+                    {
+                        Name = "Tall Capy",
+                        Age = 1,
+                        Description = "the best capybara",
+                        Gender = "Male",
+                        Price = 167.50,
+                        Image = "https://i.pinimg.com/originals/da/5b/95/da5b9540120dd4c211d570adfc624d97.jpg"
+                    },
+                    new Capybara
+                    {
+                        Name = "Small Capy",
+                        Age = 1,
+                        Description = "the best capybara",
+                        Gender = "Male",
+                        Price = 25.99,
+                        Image = "https://i.pinimg.com/originals/32/a7/6f/32a76feaa244f6de89b4ec8ebfb9d504.jpg"
                     }
                     );
                 context.SaveChanges();

@@ -1,8 +1,10 @@
-﻿using KapyZoo.Business.Services;
+﻿using Kapizoo.Models.ViewModels;
+using KapyZoo.Business.Services;
 using KapyZoo.Business.Services.IServices;
 using KapyZoo.DAL.Repositories.IRepository;
 using KapyZoo.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
+using KapyZoo.Web.Models;
 using System.Diagnostics;
 
 namespace Kapizoo.Controllers
@@ -11,6 +13,7 @@ namespace Kapizoo.Controllers
     {
         private IZooService _zooService;
         private Cart cart;
+        public int PageSize = 6;
 
         public HomeController(IZooService zooService, Cart crtServices)
         {
@@ -34,11 +37,21 @@ namespace Kapizoo.Controllers
         }
 
         [HttpGet]
-        public ViewResult Store()
+        public ViewResult Store(int productPage = 1)
         {
+            var viewModelForStore = new StoreViewModel
+            {
+                Capybaras = _zooService.Capybaras.OrderBy(c => c.CapybaraID).Skip((productPage - 1) * PageSize).Take(PageSize),
+                PagingInfo = new KapyZoo.Web.Models.PagingInfo
+                {
+                    CurrentPage = productPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = _zooService.Capybaras.Count()
+                }
+            };
             List<Capybara> capybaras = _zooService.Capybaras.ToList();
             ViewData["Capybaras"] = capybaras;
-            return View(cart);
+            return View(viewModelForStore);
 
         }
 
@@ -52,7 +65,7 @@ namespace Kapizoo.Controllers
             }
             List<Capybara> capybaras = _zooService.Capybaras.ToList();
             ViewData["Capybaras"] = capybaras;
-            return View(cart);
+            return RedirectToAction("Store");
         }
 
     }

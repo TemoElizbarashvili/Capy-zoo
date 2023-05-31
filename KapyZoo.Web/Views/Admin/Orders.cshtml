@@ -5,6 +5,10 @@
     <h1>Manage <b>Orders</b></h1>
     <div class="row">
         <h2>Ready to ship Orders</h2>
+        @if (!Model.Where(o => o.Shipped == false).Any())
+        {
+            <h5>No orders to ship</h5>
+        }
         @foreach(var order in (Model.Where(o => o.Shipped == false)))
         {
         <div class="col-md-4 mb-1">
@@ -37,6 +41,10 @@
         }
         <hr />
         <h2>Shipped Orders</h2>
+        @if (!Model.Where(o => o.Shipped == true).Any())
+        {
+            <h5>No orders Shipped</h5>
+        }
         @foreach (var order in (Model.Where(o => o.Shipped == true)))
         {
             <div class="col-md-4 mb-1">
