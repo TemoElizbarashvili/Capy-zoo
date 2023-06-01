@@ -1,15 +1,16 @@
+using KapyZoo.Shared.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace KapyZoo.Web.Areas.Identity.Data;
 
-public class IdentityDataContext : IdentityDbContext<IdentityUser>
+public class IdentityDataContext : IdentityDbContext<ApplicationUser>
 {
     public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
-        : base(options)
-    {
-    }
+        : base(options) { }
+    
+    public DbSet<ApplicationUser> ApplicationUser => Set<ApplicationUser>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

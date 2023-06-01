@@ -17,7 +17,12 @@ var connectionString = builder.Configuration.GetConnectionString("IdentityDataCo
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IZooRepository, ZooRepository>();
-//builder.Services.AddSingleton<IGalleryPicturesRepository, GalleryPicturesRepository>();
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityDataContext>().AddDefaultTokenProviders();
+
+builder.Services.AddScoped<ISeedIdentityData, SeedIdentityData>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICapybaraService, CapybaraService>();
 builder.Services.AddScoped<IGalleryPicturesService, GalleryPicturesService>();
@@ -56,5 +61,16 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 SeedData.EnsurePopulated(app);
+SeedIdentityDatabase();
 
 app.Run();
+
+
+void SeedIdentityDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<ISeedIdentityData>();
+        dbInitializer.EnsurePopulated(app);
+    }
+}
