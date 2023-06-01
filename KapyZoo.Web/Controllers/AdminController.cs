@@ -216,10 +216,8 @@ namespace Kapizoo.Controllers
         {
             var objToWorkWith = _capybarasService.GetById(capybaraId);
             string webRootPath = _hostEnvironment.WebRootPath;
-            var files = HttpContext.Request.Form.Files;
             string fileName_new = Guid.NewGuid().ToString();
             var uploads = Path.Combine(webRootPath, @"img/Capybara");
-            var extension = Path.GetExtension(files[0].FileName);
 
             //delete old image
             var oldImagePath = Path.Combine(webRootPath, objToWorkWith.Image.TrimStart('\\'));
