@@ -1,6 +1,7 @@
 ﻿using KapyZoo.Business.Services.IServices;
 using KapyZoo.DAL.Context;
 using KapyZoo.Shared.Models;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 
 namespace KapyZoo.Business.Services
@@ -8,11 +9,12 @@ namespace KapyZoo.Business.Services
     public class CapybaraService : ICapybaraService
     {
         private ZooDbContext _db;
-        private OrderService _orderService;
+        private IOrderService _orderService;
 
-        public CapybaraService(ZooDbContext db)
+        public CapybaraService(ZooDbContext db, IOrderService os)
         {
             _db = db;
+            _orderService = os;
         }
 
         public Task CreateCapybara(Capybara capy)
@@ -22,13 +24,16 @@ namespace KapyZoo.Business.Services
             return Task.CompletedTask;
         }
 
-        public Task DeleteCapybara(int id)
+        public async Task DeleteCapybara(int id)
         {
             var objToDelete = _db.Capybaras.Where(c => c.CapybaraID == id).Include(c => c.Lines).FirstOrDefault();
+            foreach(var item in objToDelete.Lines)
+            {
+                await _orderService.DeleteOrder(item.OrderId);
+            }
             objToDelete.Lines.Clear();
             _db.Capybaras.Remove(objToDelete);
             _db.SaveChanges();
-            return Task.CompletedTask;
         }
 
         public Task EditCapybara(Capybara capy)
