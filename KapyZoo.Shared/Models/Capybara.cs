@@ -22,7 +22,8 @@ namespace KapyZoo.Shared.Models
         [Required(ErrorMessage = "Please choose gender")]
         public string Gender { get; set; }
         public double Price { get; set; }
-
         public string Image { get; set; }
+        [BindNever]
+        public ICollection<CartLine> Lines { get; set; }
     }
 }

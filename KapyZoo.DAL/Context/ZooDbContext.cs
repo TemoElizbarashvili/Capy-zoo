@@ -17,6 +17,16 @@ namespace KapyZoo.DAL.Context
         public DbSet<GalleryPicture> GalleryPictures => Set<GalleryPicture>();
 
         public DbSet<Order> Orders => Set<Order>();
-        
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<CartLine>()
+        //        .HasOne(e => e.Capybara)
+        //        .WithMany(e => e.Lines)
+        //        .HasForeignKey(e => e.Capybara)
+        //        .OnDelete(DeleteBehavior.Cascade)
+        //        .IsRequired();
+        //}
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using KapyZoo.Business.Services.IServices;
 using KapyZoo.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Kapizoo.Controllers
 {
@@ -225,7 +225,7 @@ namespace Kapizoo.Controllers
             {
                 System.IO.File.Delete(oldImagePath);
             }
-
+            
 
             await _capybarasService.DeleteCapybara(capybaraId);
 

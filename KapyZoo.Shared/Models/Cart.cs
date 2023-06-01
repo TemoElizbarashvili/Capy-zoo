@@ -3,8 +3,8 @@
     public class CartLine
     {
         public int CartLineID { get; set; }
-        
-        public Capybara Capybara { get; set; } = new Capybara();
+        public Capybara Capybara { get; set; }
+        public int OrderId { get; set; }
         public int Quantity { get; set; }
     }
 

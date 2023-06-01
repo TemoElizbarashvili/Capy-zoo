@@ -27,7 +27,6 @@ namespace KapyZoo.Business.Services
         {
             var orderFromDb = _db.Orders.Where(o => o.OrderId == id).Include(o => o.Lines).FirstOrDefault();
             orderFromDb.Lines.Clear();
-            orderFromDb.Lines = null;
             await Task.FromResult(_db.Orders.Remove(orderFromDb));
             _db.SaveChanges();
         }
