@@ -10,16 +10,15 @@ using KapyZoo.Business.Services;
 using Microsoft.AspNetCore.Identity;
 using KapyZoo.Web.Areas.Identity.Data;
 
+
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("IdentityDataContextConnection");builder.Services.AddDbContext<IdentityDataContext>(options =>
-    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<IdentityDataContext>();
+var connectionString = builder.Configuration.GetConnectionString("IdentityDataContextConnection"); builder.Services.AddDbContext<IdentityDataContext>(options =>
+    options.UseSqlServer(connectionString)); builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<IdentityDataContext>().AddDefaultTokenProviders();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IZooRepository, ZooRepository>();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<IdentityDataContext>().AddDefaultTokenProviders();
 
 builder.Services.AddScoped<ISeedIdentityData, SeedIdentityData>();
 

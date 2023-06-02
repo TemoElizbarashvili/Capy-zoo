@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KapyZoo.Web.Areas.Identity.Data;
 
-public class IdentityDataContext : IdentityDbContext<ApplicationUser>
+public class IdentityDataContext : IdentityDbContext<IdentityUser>
 {
     public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
         : base(options) { }
     
-    public DbSet<ApplicationUser> ApplicationUser => Set<ApplicationUser>();
+    public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

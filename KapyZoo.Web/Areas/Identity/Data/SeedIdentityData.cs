@@ -9,8 +9,8 @@ namespace KapyZoo.Web.Areas.Identity.Data
 {
     public class SeedIdentityData : ISeedIdentityData
     {
-        private  UserManager<IdentityUser> _userManager;
-        private  RoleManager<IdentityRole> _roleManager;
+        private UserManager<IdentityUser> _userManager;
+        private RoleManager<IdentityRole> _roleManager;
 
         public SeedIdentityData(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
@@ -21,7 +21,7 @@ namespace KapyZoo.Web.Areas.Identity.Data
         public void EnsurePopulated(IApplicationBuilder app)
         {
             IdentityDataContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<IdentityDataContext>();
-            
+
             if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
@@ -42,9 +42,12 @@ namespace KapyZoo.Web.Areas.Identity.Data
                     LastName = "Admin"
                 }, "P@ssword123").GetAwaiter().GetResult();
 
-                ApplicationUser user = context.ApplicationUser.FirstOrDefault(u => u.Email == "admin@dokkyoshi.com");
+                ApplicationUser user = context.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@dokkyoshi.com");
 
-                _userManager.AddToRoleAsync(user, RD.AdminRole).GetAwaiter().GetResult();
+                if(!_userManager.Users.Where(u => u.Id == user.Id).Any())
+                {
+                    _userManager.AddToRoleAsync(user, RD.AdminRole).GetAwaiter().GetResult();
+                }
             }
         }
     }
