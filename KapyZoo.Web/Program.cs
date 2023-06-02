@@ -22,6 +22,8 @@ builder.Services.AddScoped<IZooRepository, ZooRepository>();
 
 builder.Services.AddScoped<ISeedIdentityData, SeedIdentityData>();
 
+builder.Services.AddRazorPages();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICapybaraService, CapybaraService>();
 builder.Services.AddScoped<IGalleryPicturesService, GalleryPicturesService>();
@@ -51,6 +53,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
 
+app.MapRazorPages();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

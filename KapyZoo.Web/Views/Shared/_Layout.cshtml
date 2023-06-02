@@ -40,6 +40,9 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                         </li>
+                        @if (User.IsInRole(RD.AdminRole))
+                        {
+                            
                         <li class="nav-item dropdown text-white">
                             <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
                             <div class="dropdown-menu text-bg-white text-black">
@@ -49,18 +52,20 @@
 
                                 <div class="dropdown-divider">
                                 </div>
-                                <a class="nav-link dropdown-item text-black" asp-area="">4</a>
-
+                                    <a class="nav-link dropdown-item text-black" id="register" asp-area="Identity" asp-page="/Account/Register">
+                                        Register Manager
+                                    </a>
                             </div>
                         </li>
+                        }
                     </ul>
                 </div>
+                <partial name="_LoginPartial" />
                 <div class="navbar-text text-end ">
                     <a class="btn btn-sm btn-secondary navbar-btn" asp-area="" asp-controller="Cart" asp-action="Index">
                         <i class="fa fa-shopping-cart"></i>
                     </a>
                 </div>
-                <partial name="_LoginPartial" />
             </div>
         </nav>
     </header>

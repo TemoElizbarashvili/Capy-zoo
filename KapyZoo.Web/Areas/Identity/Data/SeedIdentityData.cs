@@ -33,20 +33,21 @@ namespace KapyZoo.Web.Areas.Identity.Data
                 _roleManager.CreateAsync(new IdentityRole(RD.CustomerRole)).GetAwaiter().GetResult();
 
                 //Initialize Admin user
-                _userManager.CreateAsync(new ApplicationUser
+                _userManager.CreateAsync(new IdentityUser
                 {
-                    UserName = "Admin",
+                    UserName = "admin@dokkyoshi.com",
                     Email = "admin@dokkyoshi.com",
-                    EmailConfirmed = true,
-                    FirstName = "Main",
-                    LastName = "Admin"
-                }, "P@ssword123").GetAwaiter().GetResult();
+                    EmailConfirmed = true
+                }, "Password-23").GetAwaiter().GetResult();
 
-                ApplicationUser user = context.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@dokkyoshi.com");
+                var user = _userManager.FindByEmailAsync("admin@dokkyoshi.com").GetAwaiter().GetResult();
 
-                if(!_userManager.Users.Where(u => u.Id == user.Id).Any())
+                if (user != null)
                 {
-                    _userManager.AddToRoleAsync(user, RD.AdminRole).GetAwaiter().GetResult();
+                    if (!_userManager.IsInRoleAsync(user, RD.AdminRole).GetAwaiter().GetResult())
+                    {
+                        _userManager.AddToRoleAsync(user, RD.AdminRole).GetAwaiter().GetResult();
+                    }
                 }
             }
         }
