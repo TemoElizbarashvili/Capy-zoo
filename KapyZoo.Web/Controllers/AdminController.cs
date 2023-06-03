@@ -1,10 +1,13 @@
 ﻿using KapyZoo.Business.Services.IServices;
 using KapyZoo.Shared.Models;
+using KapyZoo.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Kapizoo.Controllers
 {
+    [Authorize(Roles = $"{RD.AdminRole}")]
     public class AdminController : Controller
     {
         private ICapybaraService _capybarasService;
