@@ -9,31 +9,49 @@ using KapyZoo.Business.Services.IServices;
 using KapyZoo.Business.Services;
 using Microsoft.AspNetCore.Identity;
 using KapyZoo.Web.Areas.Identity.Data;
-
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("IdentityDataContextConnection"); builder.Services.AddDbContext<IdentityDataContext>(options =>
+
+//Logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+using var loggerFactory = LoggerFactory.Create(builder =>
+{
+    builder.AddSimpleConsole(i => i.ColorBehavior = LoggerColorBehavior.Disabled);
+});
+
+var logger = loggerFactory.CreateLogger<Program>();
+
+//Identity context configuration
+var connectionString = builder.Configuration.GetConnectionString("IdentityDataContextConnection");
+builder.Services.AddDbContext<IdentityDataContext>(options =>
     options.UseSqlServer(connectionString)); builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<IdentityDataContext>().AddDefaultTokenProviders();
-// Add services to the container.
+
+//MVC
 builder.Services.AddControllersWithViews();
+
+// Dependency Injections
 builder.Services.AddScoped<IZooRepository, ZooRepository>();
-
-
 builder.Services.AddScoped<ISeedIdentityData, SeedIdentityData>();
-
-builder.Services.AddRazorPages();
-
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICapybaraService, CapybaraService>();
 builder.Services.AddScoped<IGalleryPicturesService, GalleryPicturesService>();
 builder.Services.AddScoped<IZooService, ZooService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession();
 builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+//Razor pages
+builder.Services.AddRazorPages();
 
+//Session
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+
+//DB context config
 builder.Services.AddDbContext<ZooDbContext>(opts =>
 {
     opts.UseSqlServer(
@@ -50,11 +68,14 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
+
 app.UseSession();
 
 app.MapRazorPages();
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -62,6 +83,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+//Seed data in Db contexts
 SeedData.EnsurePopulated(app);
 SeedIdentityDatabase();
 
